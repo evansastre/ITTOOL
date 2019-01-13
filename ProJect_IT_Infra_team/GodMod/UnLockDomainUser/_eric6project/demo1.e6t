@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Tasks SYSTEM "Tasks-6.0.dtd">
+<!-- eric6 tasks file for project demo1 -->
+<!-- Saved: 2016-04-21, 00:14:47 -->
+<Tasks version="6.0">
+  <ProjectScanFilter></ProjectScanFilter>
+  <Task priority="1" completed="False" type="1" uid="{570683d6-acb6-4a3b-b38d-a031c43653ea}">
+    <Summary>TODO: not implemented yet</Summary>
+    <Description></Description>
+    <Created>2015-09-29, 20:05:32</Created>
+    <Resource>
+      <Filename>dspwd.py</Filename>
+      <Linenumber>32</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{3217283f-f25a-4a76-9655-62872318451d}">
+    <Summary>TODO: not implemented yet</Summary>
+    <Description></Description>
+    <Created>2015-09-29, 20:05:32</Created>
+    <Resource>
+      <Filename>dspwd.py</Filename>
+      <Linenumber>40</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{bea7e381-9f81-46f4-ab19-bf59afa69274}">
+    <Summary>TODO: not implemented yet</Summary>
+    <Description></Description>
+    <Created>2015-09-29, 20:05:32</Created>
+    <Resource>
+      <Filename>dspwd.py</Filename>
+      <Linenumber>51</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{4f282ae8-6cc1-4b26-8845-275ba0961d5e}">
+    <Summary>TODO: not implemented yet</Summary>
+    <Description></Description>
+    <Created>2015-09-29, 20:05:32</Created>
+    <Resource>
+      <Filename>dspwd.py</Filename>
+      <Linenumber>66</Linenumber>
+    </Resource>
+  </Task>
+</Tasks>

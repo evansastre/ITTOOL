@@ -1,0 +1,1 @@
+FileInstall(".\tcping.exe",@UserProfileDir & "\tcping.exe")

@@ -1,0 +1,102 @@
+#include <GUIConstantsEx.au3>
+#include <MsgBoxConstants.au3>
+#include <StaticConstants.au3>
+#include <TreeViewConstants.au3>
+#include <WindowsConstants.au3>
+
+Example()
+
+Func Example()
+    GUICreate("树视图控件 GUI", 350, 215)
+
+    Local $idTreeview = GUICtrlCreateTreeView(6, 6, 100, 150, BitOR($TVS_HASBUTTONS, $TVS_HASLINES, $TVS_LINESATROOT, $TVS_DISABLEDRAGDROP, $TVS_SHOWSELALWAYS), $WS_EX_CLIENTEDGE)
+    Local $idGeneralitem = GUICtrlCreateTreeViewItem("常规", $idTreeview)
+    GUICtrlSetColor(-1, 0x0000C0)
+    Local $idDisplayitem = GUICtrlCreateTreeViewItem("显示", $idTreeview)
+    GUICtrlSetColor(-1, 0x0000C0)
+    Local $idAboutitem = GUICtrlCreateTreeViewItem("关于...", $idGeneralitem)
+    Local $idCompitem = GUICtrlCreateTreeViewItem("计算机", $idGeneralitem)
+    GUICtrlCreateTreeViewItem("用户", $idGeneralitem)
+    GUICtrlCreateTreeViewItem("分辨率", $idDisplayitem)
+    GUICtrlCreateTreeViewItem("其它", $idDisplayitem)
+
+    Local $idStartlabel = GUICtrlCreateLabel("树视图演示", 190, 90, 100, 20)
+    Local $idAboutlabel = GUICtrlCreateLabel("这个小脚本演示如何使用树视图控件.", 190, 70, 100, 60)
+    GUICtrlSetState(-1, $GUI_HIDE) ; 隐藏"关于"标签 - 初始化文本
+    Local $idCompinfo = GUICtrlCreateLabel("用户名称:" & @TAB & @ComputerName & @CRLF & "操作系统:" & @TAB & @OSVersion & @CRLF & "服务包:" & @TAB & @OSServicePack, 120, 30, 200, 80)
+    GUICtrlSetState(-1, $GUI_HIDE) ; 隐藏"计算机"标签 - 初始化文本
+
+    GUICtrlCreateLabel("", 0, 170, 350, 2, $SS_SUNKEN)
+    Local $idTogglebutton = GUICtrlCreateButton("切换 &T", 35, 185, 70, 20)
+    Local $idInfobutton = GUICtrlCreateButton("信息 &I", 105, 185, 70, 20)
+    Local $idStatebutton = GUICtrlCreateButton("折叠/展开", 175, 185, 70, 20)
+    Local $idCancelbutton = GUICtrlCreateButton("Cancel &C", 245, 185, 70, 20)
+
+    GUICtrlSetState($idGeneralitem, BitOR($GUI_EXPAND, $GUI_DEFBUTTON)) ; Expand the "常规"-item and paint in bold
+    GUICtrlSetState($idDisplayitem, BitOR($GUI_EXPAND, $GUI_DEFBUTTON)) ; 展开"显示"项 - 文本着色并字体加粗
+
+    GUISetState(@SW_SHOW)
+
+    Local $idMsg, $idItem, $hItem, $sText
+    ; 循环到用户退出.
+    While 1
+        $idMsg = GUIGetMsg()
+        Select
+            Case $idMsg = $idCancelbutton Or $idMsg = $GUI_EVENT_CLOSE
+                ExitLoop
+
+            Case $idMsg = $idTogglebutton ; 切换粗体文本绘制
+                If BitAND(GUICtrlRead($idGeneralitem), $GUI_DEFBUTTON) Then
+                    GUICtrlSetState($idGeneralitem, 0)
+                    GUICtrlSetState($idDisplayitem, 0)
+                Else
+                    GUICtrlSetState($idGeneralitem, $GUI_DEFBUTTON)
+                    GUICtrlSetState($idDisplayitem, $GUI_DEFBUTTON)
+                EndIf
+
+            Case $idMsg = $idInfobutton
+                $idItem = GUICtrlRead($idTreeview) ; 获取树视图当前选定项的控件 ID
+                If $idItem = 0 Then
+                    MsgBox($MB_SYSTEMMODAL, "树视图演示", "当前没有选中项目")
+                Else
+                    $sText = GUICtrlRead($idItem, 1) ; 获取树视图项目的文本
+                    If $sText == "" Then
+                        MsgBox($MB_SYSTEMMODAL, "错误", "检索有关项目的信息时出错")
+                    Else
+                        MsgBox($MB_SYSTEMMODAL, "树视图演示", "当前选择的项目: " & $sText)
+                    EndIf
+                EndIf
+
+            Case $idMsg = $idStatebutton
+                $idItem = GUICtrlRead($idTreeview)
+                If $idItem > 0 Then
+                    $hItem = GUICtrlGetHandle($idItem)
+                    GUICtrlSendMsg($idTreeview, $TVM_EXPAND, $TVE_TOGGLE, $hItem)
+                EndIf
+
+                ; 下列项目将隐藏其它标签(第一和第二参数); (第三和第四个参数)显示"特定"的标签
+            Case $idMsg = $idGeneralitem
+                GUIChangeItems($idAboutlabel, $idCompinfo, $idStartlabel, $idStartlabel)
+
+            Case $idMsg = $idAboutitem
+                GUICtrlSetState($idCompinfo, $GUI_HIDE)
+                GUIChangeItems($idStartlabel, $idStartlabel, $idAboutlabel, $idAboutlabel)
+
+            Case $idMsg = $idCompitem
+                GUIChangeItems($idStartlabel, $idAboutlabel, $idCompinfo, $idCompinfo)
+        EndSelect
+    WEnd
+
+    GUIDelete()
+EndFunc   ;==>Example
+
+Func GUIChangeItems($idHidestart, $idHideend, $idShowstart, $idShowend)
+    Local $idX
+
+    For $idX = $idHidestart To $idHideend
+        GUICtrlSetState($idX, $GUI_HIDE)
+    Next
+    For $idX = $idShowstart To $idShowend
+        GUICtrlSetState($idX, $GUI_SHOW)
+    Next
+EndFunc   ;==>GUIChangeItems

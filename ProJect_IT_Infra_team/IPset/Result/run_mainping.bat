@@ -1,0 +1,1 @@
+cmd /c python E:\MyDoc\ITtools\Result\mainping.py

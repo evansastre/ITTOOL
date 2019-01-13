@@ -1,0 +1,55 @@
+
+Prepare
+1.Made encrypted client, overwrite current client (once)
+2.The client shortcut in the client is the coverage example created after the first load. Pay attention to the naming, do not have other suffixes. (once)
+
+Deployment Phase 1 - Supplier:
+operating:
+Run copy_game_client as needed to see if the D drive has a copy of the file and shut it down.
+
+
+This step is done in the script:
+1. Encrypt a copy of the client file;
+2. A copy of each script file;
+3. A copy of the background image folder;
+4. Modified the password of the current (administrator) account (Password@3);
+5. Created a new account newUser (Password@1)
+
+
+Deployment Phase 2 - On-site volunteers:
+operating:
+1. Boot to the newUser desktop
+2. C:\desktopImages is the desktop background image, select and set
+3. Manually delete the Edge browser, respectively in the start menu bar and taskbar
+4. Run C:\policy_disable.exe (the script runs last, because the script finishes automatically restarts)
+
+
+This step is done in the script:
+1. Copy the shortcut of the loading script and the shortcut of the client running program to the newUser desktop
+2. Script policy restriction policy, newUser downgrades to ordinary users
+3. Automatic restart, used to validate part of the strategy
+
+  
+Use stage - on-site volunteers, IT:
+1. Client loading - IT:
+?? Enter the newUser desktop, run mount_xxx.bat. The cmd box will prompt you to enter the load password, pay attention to switch English character input;
+?? After the end, the password input box for calling the administrator authority will pop up, and the administrator password (Password@3) will be entered.
+?? After the input, the corresponding game client will be loaded with a new drive letter. At this point, the corresponding game client shortcut on the desktop can be opened by clicking.
+Higher authority limits can only be handled by IT.
+
+2. Shutdown and restart - live volunteers:
+?? The unloaded script is done in the boot, so as long as the computer is turned off, after reopening, it is necessary to reload.
+?? Be sure to confirm that the site has been shut down before leaving the site.
+?
+3.newUser's temporary adjustment and resolution limit - IT:
+?? Lifting rights:
+?? Under the newUser account, you can access C:\common\upgrade, script 1 is executed with admin privileges, and scripts 2 and 3 are executed with user privileges.
+?? Downgrade:
+?? Run C:\policy_disable.exe
+
+End stage - on-site volunteers, IT:
+operating:
+???? After ending the cj activity, go to the administrator desktop, open C:\common\Alldelete, and run the script deleteAll.exe.
+This step is done in the script:
+???? Format the loading disk, cancel loading, and format the D disk that stores the encrypted file, delete all scripts, pictures, and change the administrator password to 123.
+.

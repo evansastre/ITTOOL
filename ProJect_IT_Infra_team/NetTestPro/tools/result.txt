@@ -1,0 +1,1 @@
+Ping (Lowest): 38.51 ms | Download (Max): 70.02 Mbps | Upload (Max): 11.94 Mbps

@@ -1,0 +1,2 @@
+1 use admin privilege
+2¡¢3 use user privilege

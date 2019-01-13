@@ -1,0 +1,5 @@
+dsmod 成功:CN=User1,OU=WOW_GM_Quality_HZ,OU=WOW_GM_Quality,OU=WOW_GM,OU=WOW_user_hz,OU=WOW_all_user,DC=CorpDomain,DC=internal
+dsmod 成功:CN=User2,OU=WOW_CS_MEMBER,OU=WOW_CS,OU=WOW_user_hz,OU=WOW_all_user,DC=CorpDomain,DC=internal
+dsmod 成功:CN=User3,OU=WOW_GM_MEMBER_HZ,OU=WOW_GM_MEMBER,OU=WOW_GM,OU=WOW_user_hz,OU=WOW_all_user,DC=CorpDomain,DC=internal
+dsmod 成功:CN=User4,OU=WOW_GM_MEMBER_HZ,OU=WOW_GM_MEMBER,OU=WOW_GM,OU=WOW_user_hz,OU=WOW_all_user,DC=CorpDomain,DC=internal
+dsmod 成功:CN=User5,OU=WOW_CS_MEMBER_GM,OU=WOW_CS_MEMBER,OU=WOW_CS,OU=WOW_user_hz,OU=WOW_all_user,DC=CorpDomain,DC=internal

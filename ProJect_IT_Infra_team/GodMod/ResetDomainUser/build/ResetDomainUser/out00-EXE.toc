@@ -1,0 +1,9 @@
+('E:\\MyDoc\\ITTOOL\\ProJect_IT_Only\\GodMod\\ResetDomainUser\\dist\\ResetDomainUser.exe',
+ False,
+ False,
+ None,
+ None,
+ [],
+ None,
+ False,
+ 1447313608L)

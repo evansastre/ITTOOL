@@ -1,0 +1,5 @@
+Venue information£ºShanghai Hilton
+Theoretical bandwidth£º1000Mbps
+Test node£ºHuawei SwitchS5900
+device£ºdell 3020
+Remarks£º123456789

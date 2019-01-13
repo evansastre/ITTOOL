@@ -1,0 +1,382 @@
+场地信息：杭州西可
+理论带宽：1000Mbps
+测试结点：Huawei SwitchS5900
+设备：dell 3020台式机
+备注：123456789
+
+
+start time   2016-11-21 11:11:46  本机内网IP:192.168.109.207
+
+end   time   2016-11-21 11:13:31  本机内网IP:192.168.109.207
+
+===================================================================================================
+风云  tcping测试：
+
+Probing 117.21.201.138:80/tcp - Port is open - time=20.145ms 
+Probing 117.21.201.138:80/tcp - Port is open - time=16.513ms 
+Probing 117.21.201.138:80/tcp - Port is open - time=17.737ms 
+Probing 117.21.201.138:80/tcp - Port is open - time=15.999ms 
+Probing 117.21.201.138:80/tcp - Port is open - time=14.453ms 
+Probing 117.21.201.138:80/tcp - Port is open - time=37.464ms 
+Probing 117.21.201.138:80/tcp - Port is open - time=19.760ms 
+Probing 117.21.201.138:80/tcp - Port is open - time=16.967ms 
+Probing 117.21.201.138:80/tcp - Port is open - time=15.734ms 
+Probing 117.21.201.138:80/tcp - Port is open - time=16.659ms 
+Probing 117.21.201.138:80/tcp - Port is open - time=15.779ms 
+Probing 117.21.201.138:80/tcp - Port is open - time=16.889ms 
+Probing 117.21.201.138:80/tcp - Port is open - time=18.789ms 
+Probing 117.21.201.138:80/tcp - Port is open - time=26.023ms 
+Probing 117.21.201.138:80/tcp - Port is open - time=16.880ms 
+Probing 117.21.201.138:80/tcp - Port is open - time=17.573ms 
+Probing 117.21.201.138:80/tcp - Port is open - time=16.558ms 
+Probing 117.21.201.138:80/tcp - Port is open - time=15.576ms 
+Probing 117.21.201.138:80/tcp - Port is open - time=16.043ms 
+Probing 117.21.201.138:80/tcp - Port is open - time=16.245ms 
+
+Ping statistics for 117.21.201.138:80
+     20 probes sent. 
+     20 successful, 0 failed.
+Approximate trip times in milli-seconds:
+     Minimum = 14.453ms, Maximum = 37.464ms, Average = 18.389ms
+
+分析：返回20个结果。一般我们认为返回时间平均在30ms以下、无过高峰值判定为良好。
+===================================================================================================
+
+风云  mtr检测：
+winmtrcmd -c 20 fengyunzhibo.com
+HOST: HSH-D-2517                   Loss%  Snt  Last    Avg Best Wrst  StDev
+  1.|-- 192.168.109.254             0.0%   20     0    0.6    0    4    1.1
+  2.|-- 8.8.8.2                    40.0%   20     0    0.0    0    0    0.0
+  3.|-- ???                       100.0%   20     0    0.0    0    0    0.0
+  4.|-- 10.163.4.57                 0.0%   20     0    0.4    0    1    0.5
+  5.|-- 115.238.118.189             0.0%   20     1    1.1    0    2    0.4
+  6.|-- 115.238.120.85             90.0%   20     1    0.5    0    1    0.7
+  7.|-- 220.191.200.105             0.0%   20     1    1.0    1    1    0.0
+  8.|-- 202.97.75.146               0.0%   20    23   23.9   22   26    1.3
+  9.|-- 182.98.242.130             55.0%   20    15   15.4   15   16    0.5
+ 10.|-- 111.74.182.138              0.0%   20    26   26.0   26   26    0.0
+ 11.|-- ???                       100.0%   20     0    0.0    0    0    0.0
+ 12.|-- ???                       100.0%   20     0    0.0    0    0    0.0
+ 13.|-- ???                       100.0%   20     0    0.0    0    0    0.0
+ 14.|-- 117.21.201.138              0.0%   20    28   28.0   28   29    0.2 
+ 
+分析：
+查看最后能到达的一跳，一般丢包率20%以下，Avg(平均返回值)30以下，判定为网络状况良好。
+===================================================================================================
+
+===================================================================================================
+虎牙  tcping测试：
+
+Probing 58.215.169.50:80/tcp - Port is open - time=9.544ms 
+Probing 58.215.169.50:80/tcp - Port is open - time=9.542ms 
+Probing 58.215.169.50:80/tcp - Port is open - time=9.099ms 
+Probing 58.215.169.50:80/tcp - Port is open - time=12.074ms 
+Probing 58.215.169.50:80/tcp - Port is open - time=9.139ms 
+Probing 58.215.169.50:80/tcp - Port is open - time=11.998ms 
+Probing 58.215.169.50:80/tcp - Port is open - time=10.462ms 
+Probing 58.215.169.50:80/tcp - Port is open - time=12.987ms 
+Probing 58.215.169.50:80/tcp - Port is open - time=10.523ms 
+Probing 58.215.169.50:80/tcp - Port is open - time=11.224ms 
+Probing 58.215.169.50:80/tcp - Port is open - time=9.394ms 
+Probing 58.215.169.50:80/tcp - Port is open - time=8.533ms 
+Probing 58.215.169.50:80/tcp - Port is open - time=12.067ms 
+Probing 58.215.169.50:80/tcp - Port is open - time=9.141ms 
+Probing 58.215.169.50:80/tcp - Port is open - time=11.380ms 
+Probing 58.215.169.50:80/tcp - Port is open - time=8.504ms 
+Probing 58.215.169.50:80/tcp - Port is open - time=9.628ms 
+Probing 58.215.169.50:80/tcp - Port is open - time=10.384ms 
+Probing 58.215.169.50:80/tcp - Port is open - time=9.010ms 
+Probing 58.215.169.50:80/tcp - Port is open - time=11.410ms 
+
+Ping statistics for 58.215.169.50:80
+     20 probes sent. 
+     20 successful, 0 failed.
+Approximate trip times in milli-seconds:
+     Minimum = 8.504ms, Maximum = 12.987ms, Average = 10.302ms
+
+分析：返回20个结果。一般我们认为返回时间平均在30ms以下、无过高峰值判定为良好。
+===================================================================================================
+
+虎牙  mtr检测：
+winmtrcmd -c 20 rtmp.huya.com
+HOST: HSH-D-2517                   Loss%  Snt  Last    Avg Best Wrst  StDev
+  1.|-- 192.168.109.254             0.0%   20     0    0.5    0    7    1.7
+  2.|-- 8.8.8.2                    65.0%   20     0    0.0    0    0    0.0
+  3.|-- ???                       100.0%   20     0    0.0    0    0    0.0
+  4.|-- 10.163.4.53                 0.0%   20     1    1.2    0    7    1.4
+  5.|-- 115.238.118.177             0.0%   20     1    1.1    1    2    0.3
+  6.|-- 115.238.120.89             90.0%   20     1    1.0    1    1    0.0
+  7.|-- 220.191.200.89              0.0%   20     4    4.6    1    8    2.1
+  8.|-- 202.97.68.225               0.0%   20     7    6.9    5    8    1.2
+  9.|-- 58.215.34.2                 0.0%   20     7    7.3    7    8    0.5
+ 10.|-- 58.215.34.226               0.0%   20    17   15.5   11   80   15.2
+ 11.|-- 58.215.43.206              10.0%   20    11   17.6   10  129   27.8
+ 12.|-- 58.215.178.118              0.0%   20    10    9.9    9   10    0.3
+ 13.|-- ???                       100.0%   20     0    0.0    0    0    0.0
+ 14.|-- 58.215.169.50               0.0%   20     9    9.2    9   12    0.7 
+ 
+分析：
+查看最后能到达的一跳，一般丢包率20%以下，Avg(平均返回值)30以下，判定为网络状况良好。
+===================================================================================================
+
+===================================================================================================
+全民  tcping测试：
+
+Probing 183.134.27.148:80/tcp - Port is open - time=9.616ms 
+Probing 183.134.27.148:80/tcp - Port is open - time=6.874ms 
+Probing 183.134.27.148:80/tcp - Port is open - time=8.758ms 
+Probing 183.134.27.148:80/tcp - Port is open - time=7.106ms 
+Probing 183.134.27.148:80/tcp - Port is open - time=7.553ms 
+Probing 183.134.27.148:80/tcp - Port is open - time=8.731ms 
+Probing 183.134.27.148:80/tcp - Port is open - time=6.875ms 
+Probing 183.134.27.148:80/tcp - Port is open - time=8.090ms 
+Probing 183.134.27.148:80/tcp - Port is open - time=7.165ms 
+Probing 183.134.27.148:80/tcp - Port is open - time=8.811ms 
+Probing 183.134.27.148:80/tcp - Port is open - time=7.080ms 
+Probing 183.134.27.148:80/tcp - Port is open - time=10.344ms 
+Probing 183.134.27.148:80/tcp - Port is open - time=8.515ms 
+Probing 183.134.27.148:80/tcp - Port is open - time=8.175ms 
+Probing 183.134.27.148:80/tcp - Port is open - time=7.439ms 
+Probing 183.134.27.148:80/tcp - Port is open - time=8.349ms 
+Probing 183.134.27.148:80/tcp - Port is open - time=8.690ms 
+Probing 183.134.27.148:80/tcp - Port is open - time=8.429ms 
+Probing 183.134.27.148:80/tcp - Port is open - time=8.218ms 
+Probing 183.134.27.148:80/tcp - Port is open - time=8.080ms 
+
+Ping statistics for 183.134.27.148:80
+     20 probes sent. 
+     20 successful, 0 failed.
+Approximate trip times in milli-seconds:
+     Minimum = 6.874ms, Maximum = 10.344ms, Average = 8.145ms
+
+分析：返回20个结果。一般我们认为返回时间平均在30ms以下、无过高峰值判定为良好。
+===================================================================================================
+
+全民  mtr检测：
+winmtrcmd -c 20 up.quanmin.tv
+HOST: HSH-D-2517                   Loss%  Snt  Last    Avg Best Wrst  StDev
+  1.|-- 192.168.109.254             0.0%   20     3    1.7    0   26    5.8
+  2.|-- 8.8.8.2                    35.0%   20     0    0.1    0    1    0.3
+  3.|-- ???                       100.0%   20     0    0.0    0    0    0.0
+  4.|-- 10.163.4.57                 0.0%   20     0    0.2    0    1    0.4
+  5.|-- 115.238.118.181             0.0%   20     1    0.8    0    2    0.5
+  6.|-- 115.238.120.89             80.0%   20     1    1.3    1    2    0.5
+  7.|-- 220.191.200.1               0.0%   20     3    3.1    3    4    0.4
+  8.|-- 220.189.122.50              0.0%   20     5    4.9    4    6    0.4
+  9.|-- 115.233.133.75              0.0%   20    13   10.9    8   14    2.3
+ 10.|-- 122.225.66.82               0.0%   20     6    6.1    6    7    0.2
+ 11.|-- 183.134.38.18               0.0%   20     7    7.1    7    8    0.3 
+ 
+分析：
+查看最后能到达的一跳，一般丢包率20%以下，Avg(平均返回值)30以下，判定为网络状况良好。
+===================================================================================================
+
+===================================================================================================
+CC  tcping测试：
+
+Probing 115.231.158.37:80/tcp - Port is open - time=8.582ms 
+Probing 115.231.158.37:80/tcp - Port is open - time=8.018ms 
+Probing 115.231.158.37:80/tcp - Port is open - time=8.160ms 
+Probing 115.231.158.37:80/tcp - Port is open - time=8.125ms 
+Probing 115.231.158.37:80/tcp - Port is open - time=8.123ms 
+Probing 115.231.158.37:80/tcp - Port is open - time=7.007ms 
+Probing 115.231.158.37:80/tcp - Port is open - time=6.768ms 
+Probing 115.231.158.37:80/tcp - Port is open - time=9.254ms 
+Probing 115.231.158.37:80/tcp - Port is open - time=9.341ms 
+Probing 115.231.158.37:80/tcp - Port is open - time=7.016ms 
+Probing 115.231.158.37:80/tcp - Port is open - time=7.963ms 
+Probing 115.231.158.37:80/tcp - Port is open - time=8.320ms 
+Probing 115.231.158.37:80/tcp - Port is open - time=6.900ms 
+Probing 115.231.158.37:80/tcp - Port is open - time=9.251ms 
+Probing 115.231.158.37:80/tcp - Port is open - time=8.024ms 
+Probing 115.231.158.37:80/tcp - Port is open - time=7.957ms 
+Probing 115.231.158.37:80/tcp - Port is open - time=8.053ms 
+Probing 115.231.158.37:80/tcp - Port is open - time=8.135ms 
+Probing 115.231.158.37:80/tcp - Port is open - time=8.733ms 
+Probing 115.231.158.37:80/tcp - Port is open - time=8.255ms 
+
+Ping statistics for 115.231.158.37:80
+     20 probes sent. 
+     20 successful, 0 failed.
+Approximate trip times in milli-seconds:
+     Minimum = 6.768ms, Maximum = 9.341ms, Average = 8.099ms
+
+分析：返回20个结果。一般我们认为返回时间平均在30ms以下、无过高峰值判定为良好。
+===================================================================================================
+
+CC  mtr检测：
+winmtrcmd -c 20 push.v.cc.163.com
+HOST: HSH-D-2517                   Loss%  Snt  Last    Avg Best Wrst  StDev
+  1.|-- 192.168.109.254             0.0%   20     0    0.4    0    3    0.8
+  2.|-- 8.8.8.2                    60.0%   20     0    0.1    0    1    0.4
+  3.|-- ???                       100.0%   20     0    0.0    0    0    0.0
+  4.|-- 10.163.4.57                 0.0%   20     0    0.4    0    1    0.5
+  5.|-- 115.238.118.189             0.0%   20     0    0.7    0    3    0.7
+  6.|-- 115.238.120.85             90.0%   20     1    1.0    1    1    0.0
+  7.|-- 220.191.200.125             0.0%   20     1    1.1    1    2    0.2
+  8.|-- 115.233.133.210             0.0%   20     2    2.1    2    3    0.2
+  9.|-- 115.233.133.75              0.0%   20     6    6.2    6    7    0.4
+ 10.|-- 122.225.66.82               0.0%   20     7    3.7    3    7    1.2
+ 11.|-- 183.134.38.14               0.0%   20     4    4.3    4    5    0.5 
+ 
+分析：
+查看最后能到达的一跳，一般丢包率20%以下，Avg(平均返回值)30以下，判定为网络状况良好。
+===================================================================================================
+
+===================================================================================================
+战旗  tcping测试：
+
+Probing 183.131.11.192:80/tcp - Port is open - time=7.196ms 
+Probing 183.131.11.192:80/tcp - Port is open - time=4.217ms 
+Probing 183.131.11.192:80/tcp - Port is open - time=5.945ms 
+Probing 183.131.11.192:80/tcp - Port is open - time=6.142ms 
+Probing 183.131.11.192:80/tcp - Port is open - time=7.642ms 
+Probing 183.131.11.192:80/tcp - Port is open - time=4.012ms 
+Probing 183.131.11.192:80/tcp - Port is open - time=4.686ms 
+Probing 183.131.11.192:80/tcp - Port is open - time=7.549ms 
+Probing 183.131.11.192:80/tcp - Port is open - time=3.865ms 
+Probing 183.131.11.192:80/tcp - Port is open - time=4.836ms 
+Probing 183.131.11.192:80/tcp - Port is open - time=6.342ms 
+Probing 183.131.11.192:80/tcp - Port is open - time=5.729ms 
+Probing 183.131.11.192:80/tcp - Port is open - time=3.722ms 
+Probing 183.131.11.192:80/tcp - Port is open - time=5.398ms 
+Probing 183.131.11.192:80/tcp - Port is open - time=8.443ms 
+Probing 183.131.11.192:80/tcp - Port is open - time=3.608ms 
+Probing 183.131.11.192:80/tcp - Port is open - time=3.527ms 
+Probing 183.131.11.192:80/tcp - Port is open - time=3.512ms 
+Probing 183.131.11.192:80/tcp - Port is open - time=7.185ms 
+Probing 183.131.11.192:80/tcp - Port is open - time=8.145ms 
+
+Ping statistics for 183.131.11.192:80
+     20 probes sent. 
+     20 successful, 0 failed.
+Approximate trip times in milli-seconds:
+     Minimum = 3.512ms, Maximum = 8.443ms, Average = 5.585ms
+
+分析：返回20个结果。一般我们认为返回时间平均在30ms以下、无过高峰值判定为良好。
+===================================================================================================
+
+战旗  mtr检测：
+winmtrcmd -c 20 dlrtmpup.cdn.zhanqi.tv
+HOST: HSH-D-2517                   Loss%  Snt  Last    Avg Best Wrst  StDev
+  1.|-- 192.168.109.254             0.0%   20    11    1.3    0   14    3.9
+  2.|-- 8.8.8.2                    45.0%   20     0    0.0    0    0    0.0
+  3.|-- ???                       100.0%   20     0    0.0    0    0    0.0
+  4.|-- 10.163.4.53                10.0%   20     0    0.5    0    3    0.8
+  5.|-- 115.238.118.185             0.0%   20     0    0.6    0    1    0.5
+  6.|-- ???                       100.0%   20     0    0.0    0    0    0.0
+  7.|-- 61.164.31.189               0.0%   20     0    0.6    0    1    0.5
+  8.|-- 220.191.134.173             0.0%   20     4    6.4    4   35    6.7
+  9.|-- 183.129.198.58             90.0%   20    80   64.0   48   80   22.6
+ 10.|-- ???                       100.0%   20     0    0.0    0    0    0.0
+ 11.|-- 183.131.11.192              0.0%   20     3    3.0    3    4    0.2 
+ 
+分析：
+查看最后能到达的一跳，一般丢包率20%以下，Avg(平均返回值)30以下，判定为网络状况良好。
+===================================================================================================
+
+===================================================================================================
+熊猫  tcping测试：
+
+Probing 122.228.21.39:80/tcp - Port is open - time=8.469ms 
+Probing 122.228.21.39:80/tcp - Port is open - time=7.170ms 
+Probing 122.228.21.39:80/tcp - Port is open - time=7.810ms 
+Probing 122.228.21.39:80/tcp - Port is open - time=7.756ms 
+Probing 122.228.21.39:80/tcp - Port is open - time=9.729ms 
+Probing 122.228.21.39:80/tcp - Port is open - time=7.615ms 
+Probing 122.228.21.39:80/tcp - Port is open - time=7.456ms 
+Probing 122.228.21.39:80/tcp - Port is open - time=7.448ms 
+Probing 122.228.21.39:80/tcp - Port is open - time=7.669ms 
+Probing 122.228.21.39:80/tcp - Port is open - time=7.627ms 
+Probing 122.228.21.39:80/tcp - Port is open - time=9.750ms 
+Probing 122.228.21.39:80/tcp - Port is open - time=7.633ms 
+Probing 122.228.21.39:80/tcp - Port is open - time=7.569ms 
+Probing 122.228.21.39:80/tcp - Port is open - time=7.796ms 
+Probing 122.228.21.39:80/tcp - Port is open - time=7.507ms 
+Probing 122.228.21.39:80/tcp - Port is open - time=7.868ms 
+Probing 122.228.21.39:80/tcp - Port is open - time=7.992ms 
+Probing 122.228.21.39:80/tcp - Port is open - time=7.874ms 
+Probing 122.228.21.39:80/tcp - Port is open - time=7.243ms 
+Probing 122.228.21.39:80/tcp - Port is open - time=7.606ms 
+
+Ping statistics for 122.228.21.39:80
+     20 probes sent. 
+     20 successful, 0 failed.
+Approximate trip times in milli-seconds:
+     Minimum = 7.170ms, Maximum = 9.750ms, Average = 7.879ms
+
+分析：返回20个结果。一般我们认为返回时间平均在30ms以下、无过高峰值判定为良好。
+===================================================================================================
+
+熊猫  mtr检测：
+winmtrcmd -c 20 ps8.live.panda.tv
+HOST: HSH-D-2517                   Loss%  Snt  Last    Avg Best Wrst  StDev
+  1.|-- 192.168.109.254             0.0%   20     0    0.5    0    5    1.3
+  2.|-- 8.8.8.2                    65.0%   20     0    0.1    0    1    0.4
+  3.|-- ???                       100.0%   20     0    0.0    0    0    0.0
+  4.|-- 10.163.4.53                 5.0%   20     1    1.0    0    6    1.5
+  5.|-- 115.238.118.177             0.0%   20     0    1.0    0    2    0.6
+  6.|-- 115.238.120.89             95.0%   20     1    1.0    1    1    0.0
+  7.|-- 220.191.200.93              0.0%   20     1    3.9    1    8    2.2
+  8.|-- 238.222.186.220.broad.wz.   0.0%   20     8    9.4    7   34    6.0
+  9.|-- 63.220.186.220.broad.wz.z   0.0%   20     9   11.1    8   51    9.4
+ 10.|-- ???                       100.0%   20     0    0.0    0    0    0.0
+ 11.|-- 122.228.21.39               0.0%   20     7    7.5    7    8    0.5 
+ 
+分析：
+查看最后能到达的一跳，一般丢包率20%以下，Avg(平均返回值)30以下，判定为网络状况良好。
+===================================================================================================
+
+===================================================================================================
+斗鱼  tcping测试：
+
+Probing 122.225.28.87:80/tcp - Port is open - time=3.503ms 
+Probing 122.225.28.87:80/tcp - Port is open - time=8.550ms 
+Probing 122.225.28.87:80/tcp - Port is open - time=3.697ms 
+Probing 122.225.28.87:80/tcp - Port is open - time=3.965ms 
+Probing 122.225.28.87:80/tcp - Port is open - time=6.391ms 
+Probing 122.225.28.87:80/tcp - Port is open - time=8.641ms 
+Probing 122.225.28.87:80/tcp - Port is open - time=3.488ms 
+Probing 122.225.28.87:80/tcp - Port is open - time=2.983ms 
+Probing 122.225.28.87:80/tcp - Port is open - time=3.242ms 
+Probing 122.225.28.87:80/tcp - Port is open - time=6.466ms 
+Probing 122.225.28.87:80/tcp - Port is open - time=2.954ms 
+Probing 122.225.28.87:80/tcp - Port is open - time=6.766ms 
+Probing 122.225.28.87:80/tcp - Port is open - time=6.472ms 
+Probing 122.225.28.87:80/tcp - Port is open - time=3.637ms 
+Probing 122.225.28.87:80/tcp - Port is open - time=9.535ms 
+Probing 122.225.28.87:80/tcp - Port is open - time=3.602ms 
+Probing 122.225.28.87:80/tcp - Port is open - time=6.598ms 
+Probing 122.225.28.87:80/tcp - Port is open - time=5.107ms 
+Probing 122.225.28.87:80/tcp - Port is open - time=6.084ms 
+Probing 122.225.28.87:80/tcp - Port is open - time=2.657ms 
+
+Ping statistics for 122.225.28.87:80
+     20 probes sent. 
+     20 successful, 0 failed.
+Approximate trip times in milli-seconds:
+     Minimum = 2.657ms, Maximum = 9.535ms, Average = 5.217ms
+
+分析：返回20个结果。一般我们认为返回时间平均在30ms以下、无过高峰值判定为良好。
+===================================================================================================
+
+斗鱼  mtr检测：
+winmtrcmd -c 20 send3a.douyu.com
+HOST: HSH-D-2517                   Loss%  Snt  Last    Avg Best Wrst  StDev
+  1.|-- 192.168.109.254             0.0%   20     0    0.9    0    6    1.8
+  2.|-- 8.8.8.2                     0.0%   20     0    0.0    0    0    0.0
+  3.|-- ???                       100.0%   20     0    0.0    0    0    0.0
+  4.|-- 10.163.4.57                 0.0%   20     1    0.7    0    1    0.5
+  5.|-- 115.238.118.181             0.0%   20     1    1.2    1    4    0.7
+  6.|-- 115.238.120.89             80.0%   20     1    1.3    1    2    0.5
+  7.|-- 220.191.200.97              0.0%   20     7    5.8    1    9    2.4
+  8.|-- 125.125.120.58             10.0%   20     3    3.0    3    3    0.0
+  9.|-- 61.130.252.50               0.0%   20    13   11.1    5   34    7.6
+ 10.|-- ???                       100.0%   20     0    0.0    0    0    0.0
+ 11.|-- 183.131.168.69              0.0%   20     3    3.5    3    4    0.5 
+ 
+分析：
+查看最后能到达的一跳，一般丢包率20%以下，Avg(平均返回值)30以下，判定为网络状况良好。
+===================================================================================================
+
+ 

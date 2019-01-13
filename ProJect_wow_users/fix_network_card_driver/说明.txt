@@ -1,0 +1,30 @@
+源码到交付程序的说明：
+
+1.fix_network_card_driver.py 是python部分的源码，也是主要功能所在，有任何修改后保存。
+  双击make.bat,会编译出可执行文件 fix_network_card_driver.exe
+
+2.fix_network_card_driver_au3.au3  是autoit部分的源码。主要实现的是将
+  【1】网卡驱动程序dell_Network_Driver_7THT6_WN_7886172014_A01.EXE
+  【2】fix_network_card_driver.exe
+       （以上两个程序文件在\\ITTOOL_node1\ITTOOLS\Scripts\网卡驱动）
+   打包到一起，执行时会拷贝到用户的临时目录，并且包含执行的权限。
+   
+   
+   编译（需要用到autoit的编译器）成功后形成fix_network_card_driver_au3.exe 这是最终交付的程序
+
+
+
+
+实施说明：
+   在域策略，wow_user_hz 的用户开机脚本下增加fix_network_card_driver_au3.exe 
+
+
+
+新版本网卡驱动能修补因3020现有网卡版本与新交换机不兼容问题导致的断网问题。
+此脚本工具部署在域策略所以用户开机脚本上实现：
+1.检测本机是否为3020
+2.检测注册表，新版本驱动是否已安装，否则执行安装操作
+ 
+ 
+此问题已通过行政手法，通知各小组执行安装，但难免有遗漏，导致用户反复找到我们去执行修复操作。
+此脚本的另一目的在于，预防性的找到技术可行的执行方法，为类似问题提前做好准备。

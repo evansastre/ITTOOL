@@ -1,0 +1,6 @@
+[Version] 
+Signature=$CHICAGO$
+[DefaultInstall] 
+DelReg=del
+[del] 
+HKCU,Software\Microsoft\Windows\CurrentVersion\Policies\System,DisableRegistryTools,1,00,00,00,00

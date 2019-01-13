@@ -1,0 +1,3 @@
+"CN=User1,OU=BN_OT_INTERFACE,OU=BN_OT,OU=BN_USER,OU=WOW_all_user,DC=CorpDomain,DC=internal"
+"CN=User2,OU=BN_OT_INTERFACE,OU=BN_OT,OU=BN_USER,OU=WOW_all_user,DC=CorpDomain,DC=internal"
+"CN=User3,OU=BN_OT_APP,OU=BN_OT,OU=BN_USER,OU=WOW_all_user,DC=CorpDomain,DC=internal"
